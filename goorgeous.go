@@ -117,6 +117,8 @@ func OrgOptions(input []byte, renderer blackfriday.Renderer) []byte {
 				}
 				inParagraph = false
 				tmpBlock.Reset()
+			case marker == "VERSE":
+				tmpBlock.WriteString("\n<br />")
 			case marker != "":
 				tmpBlock.WriteByte('\n')
 			default:

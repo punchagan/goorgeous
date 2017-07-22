@@ -410,6 +410,10 @@ func TestRenderingBlock(t *testing.T) {
 			"#+BEGIN_VERSE\nthis is a verse\nwith multiple lines.\n#+END_VERSE\n",
 			"<p class=\"verse\">\nthis is a verse<br />\nwith multiple lines.<br />\n</p>\n",
 		},
+		"VERSE_MULTILINE_MULTI_NEWLINE": {
+			"#+BEGIN_VERSE\nthis is a verse\nwith multiple lines.\n\nanother stanza\n#+END_VERSE\n",
+			"<p class=\"verse\">\nthis is a verse<br />\nwith multiple lines.<br />\n<br />\nanother stanza<br />\n</p>\n",
+		},
 		"VERSE_MULTILINE_INDENTATION": {
 			"#+BEGIN_VERSE\nthis is a verse\n   with multiple lines.\n#+END_VERSE\n",
 			"<p class=\"verse\">\nthis is a verse<br />\n   with multiple lines.<br />\n</p>\n",
