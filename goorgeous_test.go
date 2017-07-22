@@ -402,6 +402,22 @@ func TestRenderingBlock(t *testing.T) {
 			"#+BEGIN_EXAMPLE sh\necho \"foo\"\n\necho \"bar\"\n\necho \"foo\"\n\necho \"bar\"\n#+END_EXAMPLE\n",
 			"<pre><code class=\"language-sh\">\necho &quot;foo&quot;\n\necho &quot;bar&quot;\n\necho &quot;foo&quot;\n\necho &quot;bar&quot;\n</code></pre>\n",
 		},
+		"VERSE": {
+			"#+BEGIN_VERSE\nthis is a verse.\n#+END_VERSE\n",
+			"<p class=\"verse\">\nthis is a verse.<br />\n</p>\n",
+		},
+		"VERSE_MULTILINE": {
+			"#+BEGIN_VERSE\nthis is a verse\nwith multiple lines.\n#+END_VERSE\n",
+			"<p class=\"verse\">\nthis is a verse<br />\nwith multiple lines.<br />\n</p>\n",
+		},
+		"VERSE_MULTILINE_MULTI_NEWLINE": {
+			"#+BEGIN_VERSE\nthis is a verse\nwith multiple lines.\n\nanother stanza\n#+END_VERSE\n",
+			"<p class=\"verse\">\nthis is a verse<br />\nwith multiple lines.<br />\n<br />\nanother stanza<br />\n</p>\n",
+		},
+		"VERSE_MULTILINE_INDENTATION": {
+			"#+BEGIN_VERSE\nthis is a verse\n   with multiple lines.\n#+END_VERSE\n",
+			"<p class=\"verse\">\nthis is a verse<br />\n   with multiple lines.<br />\n</p>\n",
+		},
 		"QUOTE": {
 			"#+BEGIN_QUOTE\nthis is a quote.\n#+END_QUOTE\n",
 			"<blockquote>\n<p>\nthis is a quote.\n</p>\n</blockquote>\n",
